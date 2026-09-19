@@ -115,20 +115,6 @@ export default function PageHeader({ title }: Props) {
         ) : null}
       </div>
 
-      <div className="bg-notice px-3 py-2.5 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl items-start gap-2">
-          <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#1e4f8c] text-[10px] font-bold text-white">
-            i
-          </span>
-          <p className="text-[12.5px] leading-snug text-[#1a2b3c]">
-            {t("notice")}{" "}
-            <Link href="/about" className="font-medium text-[#1e4f8c] underline">
-              {t("noticeLink")}
-            </Link>
-          </p>
-        </div>
-      </div>
-
       <div className="flex h-11 items-center justify-between bg-section-bar px-3 sm:px-6 lg:px-8">
         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between">
           <p className="text-[14px] font-normal text-white">{sectionTitle}</p>

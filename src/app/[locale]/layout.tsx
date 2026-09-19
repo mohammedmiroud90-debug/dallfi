@@ -48,10 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: "/",
     },
     icons: {
-      icon: [
-        { url: "/favicon2.png", type: "image/png", sizes: "any" },
-        { url: "/favicon.ico", sizes: "any" },
-      ],
+      icon: [{ url: "/favicon2.png", type: "image/png" }],
       apple: [{ url: "/favicon2.png", type: "image/png" }],
       shortcut: "/favicon2.png",
     },
@@ -82,8 +79,7 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider>
           <AppLoader />
-          <NoticeBanner />
-          <SiteHeader />
+          <SiteHeader notice={<NoticeBanner />} />
           {children}
           <SiteFooter />
           <ScrollFab />

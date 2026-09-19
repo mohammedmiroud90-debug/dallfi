@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
@@ -61,7 +61,11 @@ function BrandLogo({ compact = false }: { compact?: boolean }) {
 const navLinkClass =
   "inline-block px-3 py-2 text-[15px] font-normal leading-none text-white transition-opacity hover:opacity-75 lg:px-3.5";
 
-export default function SiteHeader() {
+type Props = {
+  notice?: ReactNode;
+};
+
+export default function SiteHeader({ notice }: Props) {
   const t = useTranslations("Nav");
   const [open, setOpen] = useState(false);
 
@@ -163,23 +167,12 @@ export default function SiteHeader() {
             </nav>
           ) : null}
         </div>
+      </div>
 
-        {/* 2. Light-blue notice banner */}
-        <div className="bg-[#d9eaf7] px-3 py-2.5">
-          <div className="flex items-start gap-2">
-            <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#1e4f8c] text-[10px] font-bold text-white">
-              i
-            </span>
-            <p className="text-[12.5px] leading-snug text-[#1a2b3c]">
-              {t("notice")}{" "}
-              <Link href="/about" className="font-medium text-[#1e4f8c] underline">
-                {t("noticeLink")}
-              </Link>
-            </p>
-          </div>
-        </div>
+      {notice}
 
-        {/* 3. Dark section bar + Filter / Sort */}
+      {/* Mobile section bar + Filter / Sort */}
+      <div className="md:hidden">
         <div className="flex h-11 items-center justify-between bg-[#444444] px-3">
           <p className="text-[14px] font-bold text-white">{t("sectionTitle")}</p>
           <div className="flex items-center gap-2">
