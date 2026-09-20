@@ -131,10 +131,10 @@
 :root {
   --background: #f8f6f2;
   --foreground: #1a1a1a;
-  --brand: #ffc832;
-  --brand-dark: #e6b02b;
-  --accent: #ffc832;
-  --accent-dark: #e6b02b;
+  --brand: #fc0000;
+  --brand-dark: #d40000;
+  --accent: #fc0000;
+  --accent-dark: #d40000;
   --charcoal: #1a1a1a;
   --muted: #5a6170;
   --border: #e5e7eb;
