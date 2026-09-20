@@ -1,6 +1,7 @@
 import EcosystemCards from "@/components/EcosystemCards";
 import Hero from "@/components/Hero";
 import HomeIntro from "@/components/HomeIntro";
+import BlogList from "@/components/BlogList";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <Hero />
       <HomeIntro />
       <EcosystemCards />
+      <BlogList />
     </main>
   );
 }

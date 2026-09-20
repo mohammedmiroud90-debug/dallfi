@@ -412,6 +412,7 @@ export async function submitComment(input: {
   author: string;
   email: string;
   content: string;
+  parentId?: string;
 }): Promise<PostComment | null> {
   if (!configured) return null;
   try {
@@ -423,6 +424,7 @@ export async function submitComment(input: {
         author: input.author,
         email: input.email,
         content: input.content,
+        parentId: input.parentId || undefined,
         isActive: true,
         likeCount: 0,
       }),
@@ -435,6 +437,7 @@ export async function submitComment(input: {
       author: input.author,
       content: input.content,
       createdAt: saved.createdAt || new Date().toISOString(),
+      parentId: input.parentId,
     };
   } catch (error) {
     console.error("Parse comment create failed", error);

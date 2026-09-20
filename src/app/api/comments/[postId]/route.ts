@@ -19,14 +19,16 @@ export async function POST(
     author?: unknown;
     email?: unknown;
     content?: unknown;
+    parentId?: unknown;
   };
 
   const author = textField(body.author, 80);
   const email = textField(body.email, 254).toLowerCase();
   const content =
     typeof body.content === "string"
-      ? body.content.replace(/<[^>]*>/g, "").trim().slice(0, 2000)
+      ? body.content.replace(/<[^>]*>/g, "").trim().slice(0, 6000)
       : "";
+  const parentId = textField(body.parentId, 80);
 
   if (!author || author.length < 2) {
     return NextResponse.json({ error: "Enter your name." }, { status: 400 });
@@ -38,7 +40,14 @@ export async function POST(
     return NextResponse.json({ error: "Comment is required." }, { status: 400 });
   }
 
-  const saved = await submitComment({ postId: safePostId, author, email, content });
+  const saved = await submitComment({
+    postId: safePostId,
+    author,
+    email,
+    content,
+    parentId: parentId || undefined,
+  });
+
   if (!saved) {
     return NextResponse.json({ error: "Comment service unavailable." }, { status: 503 });
   }

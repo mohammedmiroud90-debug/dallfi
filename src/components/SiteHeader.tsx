@@ -80,18 +80,18 @@ export default function SiteHeader({ notice }: Props) {
       <div className="hidden bg-[#fc0000] md:block">
         <div className="mx-auto flex max-w-[1200px] items-center justify-end gap-6 px-5 py-2 lg:px-8">
           <a
-            href="mailto:info@dallfi.com"
+            href="mailto:mail@dallfi.com"
             className="inline-flex items-center gap-1.5 text-[12px] font-normal text-white/90 transition-opacity hover:opacity-80"
           >
             <IconMail className="h-3.5 w-3.5" />
-            info@dallfi.com
+            mail@dallfi.com
           </a>
           <a
-            href="tel:+442081428846"
+            href="tel:+213783217817"
             className="inline-flex items-center gap-1.5 text-[12px] font-normal text-white/90 transition-opacity hover:opacity-80"
           >
             <IconPhone className="h-3.5 w-3.5" />
-            +44 20 8142 8846
+            +213 783 217 817
           </a>
         </div>
 

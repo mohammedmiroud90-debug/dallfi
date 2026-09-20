@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import AppLoader from "@/components/AppLoader";
 import CookieConsent from "@/components/CookieConsent";
 import NoticeBanner from "@/components/NoticeBanner";
+import PageLoader from "@/components/PageLoader";
 import ScrollFab from "@/components/ScrollFab";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -78,6 +79,7 @@ export default async function LocaleLayout({
         className={`${isRtl ? notoArabic.className : openSans.className} flex min-h-full flex-col`}
       >
         <NextIntlClientProvider>
+          <PageLoader />
           <AppLoader />
           <SiteHeader notice={<NoticeBanner />} />
           {children}

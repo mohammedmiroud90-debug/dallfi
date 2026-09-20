@@ -30,12 +30,12 @@ export default function CookieConsent() {
     "font-medium text-white underline decoration-white/70 underline-offset-2 hover:decoration-white";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="cookie-title"
-        className="relative w-full max-w-xl bg-brand p-6 text-white shadow-[0_16px_48px_rgba(0,0,0,0.35)] sm:p-8"
+        className="relative w-full max-w-xl bg-brand p-6 text-white shadow-[0_20px_60px_rgba(0,0,0,0.5)] sm:p-8"
       >
         <Image
           src="/Dallfi.png"
@@ -48,11 +48,11 @@ export default function CookieConsent() {
 
         <h2
           id="cookie-title"
-          className="pr-36 text-[1.35rem] font-bold text-white sm:pr-44"
+          className="pr-36 text-[1.4rem] font-bold text-white sm:pr-44 sm:text-[1.5rem]"
         >
           {t("title")}
         </h2>
-        <div className="mt-4 space-y-3 pr-4 text-[14px] leading-6 text-white/95 sm:pr-8">
+        <div className="mt-4 space-y-3 pr-4 text-[14px] leading-6 text-white sm:pr-8">
           <p>{t("p1")}</p>
           <p>
             {t.rich("p2", {
@@ -79,7 +79,7 @@ export default function CookieConsent() {
         <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="button"
-            className="font-nav h-11 rounded-sm border border-white/80 bg-transparent px-5 text-[14px] text-white hover:bg-white/10"
+            className="font-nav h-11 border-2 border-white bg-transparent px-5 text-[14px] font-medium text-white transition-colors hover:bg-white hover:text-brand"
           >
             {t("settings")}
           </button>
@@ -87,14 +87,14 @@ export default function CookieConsent() {
             <button
               type="button"
               onClick={() => accept("necessary")}
-              className="font-nav h-11 rounded-sm border border-white/80 bg-transparent px-5 text-[14px] text-white hover:bg-white/10"
+              className="font-nav h-11 border-2 border-white bg-transparent px-5 text-[14px] font-medium text-white transition-colors hover:bg-white hover:text-brand"
             >
               {t("necessary")}
             </button>
             <button
               type="button"
               onClick={() => accept("all")}
-              className="font-nav h-11 rounded-sm bg-white px-6 text-[14px] text-brand hover:bg-white/90"
+              className="font-nav h-11 bg-white px-6 text-[14px] font-semibold text-brand transition-colors hover:bg-white/90"
             >
               {t("accept")}
             </button>
