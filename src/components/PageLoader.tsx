@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
-export default function PageLoader() {
+function PageLoaderInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
@@ -125,5 +125,13 @@ export default function PageLoader() {
         }
       `}</style>
     </>
+  );
+}
+
+export default function PageLoader() {
+  return (
+    <Suspense fallback={null}>
+      <PageLoaderInner />
+    </Suspense>
   );
 }
