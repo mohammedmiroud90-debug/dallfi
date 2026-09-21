@@ -69,6 +69,9 @@ export default async function LocaleLayout({
   const currentLocale = await getLocale();
   const isRtl = currentLocale === "ar";
 
+  // Check if this is an admin page - simple heuristic based on locale param
+  const isAdminPage = false; // We'll use ConditionalHeader to handle this
+
   return (
     <html
       lang={currentLocale}
@@ -81,11 +84,11 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <PageLoader />
           <AppLoader />
-          <ConditionalHeader notice={<NoticeBanner />} />
+          {!isAdminPage && <ConditionalHeader notice={<NoticeBanner />} />}
           {children}
-          <SiteFooter />
-          <ScrollFab />
-          <CookieConsent />
+          {!isAdminPage && <SiteFooter />}
+          {!isAdminPage && <ScrollFab />}
+          {!isAdminPage && <CookieConsent />}
         </NextIntlClientProvider>
       </body>
     </html>

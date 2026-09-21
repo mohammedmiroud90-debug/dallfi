@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type IconName = "posts" | "pages" | "categories" | "settings";
 
@@ -52,21 +53,23 @@ function DashboardRobot() {
   );
 }
 
-const workspaces: { title: string; description: string; href: string; icon: IconName }[] = [
-  { title: "Manage posts", description: "Create, edit, and publish your articles.", href: "/admin/posts", icon: "posts" },
-  { title: "Manage pages", description: "Update the public pages across your website.", href: "/admin/pages", icon: "pages" },
-  { title: "Manage categories", description: "Organize and manage content categories.", href: "/admin/categories", icon: "categories" },
-  { title: "Website settings", description: "Control your website preferences and details.", href: "/admin/settings", icon: "settings" },
+const workspaces: { titleKey: string; descriptionKey: string; href: string; icon: IconName }[] = [
+  { titleKey: "managePosts", descriptionKey: "managePostsDesc", href: "/admin/posts", icon: "posts" },
+  { titleKey: "managePages", descriptionKey: "managePagesDesc", href: "/admin/pages", icon: "pages" },
+  { titleKey: "manageCategories", descriptionKey: "manageCategoriesDesc", href: "/admin/categories", icon: "categories" },
+  { titleKey: "websiteSettings", descriptionKey: "websiteSettingsDesc", href: "/admin/settings", icon: "settings" },
 ];
 
 export function AdminOverview() {
+  const t = useTranslations("Admin");
+
   return (
     <section className="admin-home">
       <header className="admin-home-intro">
         <div>
-          <p className="section-label">DALLFI ADMIN</p>
-          <h1>Manage your website.</h1>
-          <p>Choose a workspace to create, update, and keep your website running smoothly.</p>
+          <p className="section-label">{t("overview")}</p>
+          <h1>{t("manageWebsite")}</h1>
+          <p>{t("chooseWorkspace")}</p>
         </div>
         <DashboardRobot />
       </header>
@@ -78,8 +81,8 @@ export function AdminOverview() {
               <Icon name={workspace.icon} />
             </span>
             <div>
-              <h2>{workspace.title}</h2>
-              <p>{workspace.description}</p>
+              <h2>{t(workspace.titleKey)}</h2>
+              <p>{t(workspace.descriptionKey)}</p>
             </div>
           </Link>
         ))}

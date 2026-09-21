@@ -35,10 +35,10 @@ export default function LoginForm() {
         throw new Error(data.error || t("loginFailed"));
       }
 
-      // Store the token in both localStorage and set cookie
+      // Store the Parse session token in both localStorage and set cookie
       if (data.token) {
         localStorage.setItem("admin_token", data.token);
-        document.cookie = `admin_token=${data.token}; path=/; max-age=86400; SameSite=Strict`;
+        document.cookie = `admin_token=${data.token}; path=/; max-age=604800; SameSite=Lax; ${process.env.NODE_ENV === 'production' ? 'Secure' : ''}`;
         // Redirect to admin page
         router.push("/admin");
       }

@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "BoschSans";
+  src: url("/boschsans_regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Haskoy";
   src: url("/Haskoy-ExtraLight.otf") format("opentype");
   font-weight: 200;
@@ -153,6 +161,7 @@
   --font-display: "Alfa Slab One", Georgia, serif;
   --font-body: var(--font-open-sans), "Open Sans", system-ui, sans-serif;
   --font-accent: "Multipa", Georgia, serif;
+  --font-admin: "BoschSans", system-ui, sans-serif;
 }
 
 @theme inline {
@@ -1049,131 +1058,17 @@ html[dir="rtl"] .medium-article .medium-body blockquote {
   padding-right: 1rem;
 }
 
-/* Dallfi administration dashboard, adapted to the site's red editorial template */
+/* Dallfi administration dashboard */
 .dallfi-admin {
   min-height: 100vh;
   background: #f5f8fc;
   color: #172b47;
 }
 
-.dallfi-admin-header {
-  position: sticky;
-  z-index: 60;
-  top: 0;
-  display: flex;
-  min-height: 68px;
-  align-items: center;
-  gap: 25px;
-  padding: 8px max(20px, calc((100vw - 1260px) / 2));
-  background: #fc0000;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
-  color: #fff;
-}
-
-.dallfi-admin-logo {
-  display: flex;
-  width: 112px;
-  height: 46px;
-  flex: none;
-  align-items: center;
-  overflow: hidden;
-}
-
-.dallfi-admin-logo img {
-  width: 112px;
-  height: auto;
-}
-
-.dallfi-admin-header nav {
-  display: flex;
-  min-width: 0;
-  flex: 1;
-  gap: 3px;
-  overflow-x: auto;
-}
-
-.dallfi-admin-header a,
-.dallfi-admin-header button {
-  flex: none;
-  border: 0;
-  border-radius: 4px;
-  padding: 9px 10px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.9);
-  font: 700 12px system-ui, sans-serif;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.dallfi-admin-header nav a.active,
-.dallfi-admin-header nav a:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-}
-
-.dallfi-admin-header > div {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.dallfi-admin-header > div a {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #fff;
-}
-
-.dallfi-admin-header > div button:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
 .dallfi-admin-main {
   width: min(100% - 40px, 1180px);
   margin: 0 auto;
   padding: 48px 0 72px;
-}
-
-.admin-header-row {
-  display: contents;
-}
-
-.admin-header-tools {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.admin-menu-toggle,
-.admin-mobile-signout {
-  display: none;
-}
-
-.admin-desktop-signout {
-  border: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.9);
-  font: 700 12px system-ui, sans-serif;
-  cursor: pointer;
-}
-
-.admin-menu-toggle {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  align-content: center;
-  gap: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  padding: 0 8px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  cursor: pointer;
-}
-
-.admin-menu-toggle i {
-  height: 1.5px;
-  background: currentColor;
 }
 
 .admin-footer {
@@ -1202,207 +1097,15 @@ html[dir="rtl"] .medium-article .medium-body blockquote {
   color: #fc0000;
 }
 
-@media (max-width: 850px) {
-  .dallfi-admin-header {
-    gap: 12px;
-    display: block;
-    min-height: 60px;
-    padding: 7px 16px;
-  }
+/* Admin header navlinks with BoschSans font */
+.admin-nav-link {
+  font-family: var(--font-admin);
+}
 
-  .admin-header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .dallfi-admin-header nav {
-    position: absolute;
-    top: 61px;
-    right: 12px;
-    left: 12px;
-    display: none;
-    overflow: visible;
-    border: 1px solid #bbcad9;
-    border-radius: 7px;
-    padding: 6px;
-    background: #f1f4f7;
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  .dallfi-admin-header nav.is-open {
-    display: grid;
-  }
-
-  .dallfi-admin-header nav::before {
-    position: absolute;
-    top: -8px;
-    right: 18px;
-    width: 14px;
-    height: 14px;
-    border-top: 1px solid #bbcad9;
-    border-left: 1px solid #bbcad9;
-    background: #f1f4f7;
-    content: "";
-    transform: rotate(45deg);
-  }
-
-  .dallfi-admin-header nav a {
-    position: relative;
-    z-index: 1;
-    border-radius: 4px;
-    padding: 12px;
-    color: #28425f;
-  }
-
-  .dallfi-admin-header nav a.active,
-  .dallfi-admin-header nav a:hover {
-    background: #dce7f1;
-    color: #fc0000;
-  }
-
-  .admin-header-tools > a {
-    display: none;
-  }
-
-  .admin-menu-toggle {
-    display: grid;
-  }
-
-  .admin-mobile-signout {
-    position: relative;
-    z-index: 1;
-    display: block;
-    border: 0;
-    border-top: 1px solid #ccd8e3;
-    padding: 11px 12px 7px;
-    background: transparent;
-    color: #b42318;
-    font: 800 12px system-ui, sans-serif;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .admin-desktop-signout {
-    display: none;
-  }
-
-  .dallfi-admin-logo {
-    width: 102px;
-  }
-
-  .dallfi-admin-logo img {
-    width: 102px;
-  }
-
+@media (max-width: 700px) {
   .dallfi-admin-main {
     width: min(100% - 28px, 1180px);
     padding-top: 30px;
-  }
-}
-
-@media (min-width: 901px) {
-  .dallfi-admin {
-    padding-left: 247px;
-  }
-
-  .dallfi-admin-header {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    width: 247px;
-    min-height: 100vh;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0;
-    background: #fc0000;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .admin-header-row {
-    display: flex;
-    min-height: 86px;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0 20px;
-  }
-
-  .dallfi-admin-logo {
-    width: 132px;
-    height: 54px;
-  }
-
-  .dallfi-admin-logo img {
-    width: 132px;
-  }
-
-  .admin-header-tools {
-    display: block;
-  }
-
-  .admin-header-tools > a {
-    display: none;
-  }
-
-  .dallfi-admin-header nav {
-    display: grid;
-    align-content: start;
-    flex: 1;
-    gap: 3px;
-    overflow: visible;
-    padding: 19px 12px;
-  }
-
-  .dallfi-admin-header nav::before {
-    color: rgba(255, 255, 255, 0.8);
-    content: "WORKSPACE";
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.45px;
-    padding: 0 10px 8px;
-  }
-
-  .dallfi-admin-header nav a {
-    border-left: 3px solid transparent;
-    border-radius: 4px;
-    padding: 11px 10px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 13px;
-  }
-
-  .dallfi-admin-header nav a:hover,
-  .dallfi-admin-header nav a.active {
-    border-left-color: #fff;
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-  }
-
-  .admin-desktop-signout {
-    margin: 15px 22px 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 16px 0 0;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: left;
-  }
-
-  .dallfi-admin-main {
-    width: min(100% - 52px, 1220px);
-    margin: 0 auto;
-    padding: 52px 0 80px;
-  }
-
-  .dallfi-admin-main::before {
-    display: block;
-    margin-bottom: 25px;
-    color: #7b8fa8;
-    content: "ADMINISTRATION / OVERVIEW";
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.35px;
   }
 }
 
@@ -1435,7 +1138,7 @@ html[dir="rtl"] .medium-article .medium-body blockquote {
 
 .admin-home-intro h1 {
   margin: 4px 0 10px;
-  color: #172b47;
+  color: #000000;
   font-size: clamp(33px, 5vw, 47px);
   letter-spacing: -0.055em;
 }
@@ -1447,7 +1150,7 @@ html[dir="rtl"] .medium-article .medium-body blockquote {
 .admin-home-intro p {
   max-width: 610px;
   margin: 0;
-  color: #5b6e85;
+  color: #000000;
   line-height: 1.6;
 }
 
@@ -1457,6 +1160,42 @@ html[dir="rtl"] .medium-article .medium-body blockquote {
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+.admin-home .section-label {
+  color: #000000;
+}
+
+.admin-page {
+  animation: dashboard-in 0.3s ease both;
+}
+
+.admin-page-title {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d7e1ec;
+}
+
+.admin-page-title h1 {
+  margin: 8px 0 12px;
+  color: #000000;
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: -0.05em;
+}
+
+.admin-page-title p {
+  max-width: 610px;
+  margin: 0;
+  color: #5b6e85;
+  line-height: 1.6;
+}
+
+.admin-content {
+  min-height: 200px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
 }
 
 .admin-home-cards {

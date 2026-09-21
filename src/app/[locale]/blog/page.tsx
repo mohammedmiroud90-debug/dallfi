@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { formatPostDate, getAllPosts, type PostCategory } from "@/lib/posts";
 
+export const dynamic = 'force-dynamic';
+
 type Props = {
   searchParams: Promise<{ category?: string }>;
 };
