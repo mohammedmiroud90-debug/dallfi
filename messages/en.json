@@ -50,7 +50,7 @@
   },
   "Hero": {
     "eyebrow": "DALLFI ecosystem — everything people and businesses need to grow.",
-    "title": "Dellfi Softwares",
+    "title": "Dallfi Softwares",
     "tagline": "A platform empowering everyone to build, work, connect, and grow.",
     "searchNote": "DALLFI is being created to explore a dedicated experience where downloading files can be managed from one centralized application.",
     "readMore": "Read more",
@@ -280,5 +280,27 @@
       "body1": "We are committed to transparency and responsible data practices across the ecosystem.",
       "body2": "Review this policy to understand your choices and how we handle personal information."
     }
+  },
+  "Login": {
+    "title": "Admin Login",
+    "description": "Access the admin dashboard to manage your content",
+    "emailLabel": "Email",
+    "emailPlaceholder": "admin@dallfi.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Login",
+    "loading": "Logging in...",
+    "loginFailed": "Login failed. Please check your credentials.",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWithEmail": "or continue with email",
+    "createAccount": "Create an account",
+    "alreadyHaveAccount": "Already have an account",
+    "login": "Login",
+    "register": "Register",
+    "continue": "Continue"
+  },
+  "Releases": {
+    "title": "Software Releases",
+    "description": "Download the latest Dallfi software releases for Windows and Chrome extensions to enhance your productivity."
   }
 }

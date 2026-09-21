@@ -99,7 +99,7 @@ export default function SiteFooter() {
   const rowOne = [
     { href: "/", label: t("home") },
     { href: "/blog?category=builds", label: t("builds") },
-    { href: "/blog?category=releases", label: t("releases") },
+    { href: "/releases", label: t("releases") },
     { href: "/about", label: t("howItWorks") },
   ] as const;
 

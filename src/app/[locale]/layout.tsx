@@ -10,7 +10,7 @@ import NoticeBanner from "@/components/NoticeBanner";
 import PageLoader from "@/components/PageLoader";
 import ScrollFab from "@/components/ScrollFab";
 import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
+import ConditionalHeader from "@/components/ConditionalHeader";
 import { PRIMARY_SITE_URL } from "@/lib/site";
 import "../globals.css";
 
@@ -81,7 +81,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <PageLoader />
           <AppLoader />
-          <SiteHeader notice={<NoticeBanner />} />
+          <ConditionalHeader notice={<NoticeBanner />} />
           {children}
           <SiteFooter />
           <ScrollFab />

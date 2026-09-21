@@ -1048,3 +1048,610 @@ html[dir="rtl"] .medium-article .medium-body blockquote {
   padding-left: 0;
   padding-right: 1rem;
 }
+
+/* Dallfi administration dashboard, adapted to the site's red editorial template */
+.dallfi-admin {
+  min-height: 100vh;
+  background: #f5f8fc;
+  color: #172b47;
+}
+
+.dallfi-admin-header {
+  position: sticky;
+  z-index: 60;
+  top: 0;
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  gap: 25px;
+  padding: 8px max(20px, calc((100vw - 1260px) / 2));
+  background: #fc0000;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.dallfi-admin-logo {
+  display: flex;
+  width: 112px;
+  height: 46px;
+  flex: none;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dallfi-admin-logo img {
+  width: 112px;
+  height: auto;
+}
+
+.dallfi-admin-header nav {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  gap: 3px;
+  overflow-x: auto;
+}
+
+.dallfi-admin-header a,
+.dallfi-admin-header button {
+  flex: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 9px 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font: 700 12px system-ui, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dallfi-admin-header nav a.active,
+.dallfi-admin-header nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.dallfi-admin-header > div {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dallfi-admin-header > div a {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.dallfi-admin-header > div button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.dallfi-admin-main {
+  width: min(100% - 40px, 1180px);
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.admin-header-row {
+  display: contents;
+}
+
+.admin-header-tools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.admin-menu-toggle,
+.admin-mobile-signout {
+  display: none;
+}
+
+.admin-desktop-signout {
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font: 700 12px system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.admin-menu-toggle {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  align-content: center;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 0 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-menu-toggle i {
+  height: 1.5px;
+  background: currentColor;
+}
+
+.admin-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem max(20px, calc((100vw - 1260px) / 2));
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.admin-footer nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-footer a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.admin-footer a:hover {
+  color: #fc0000;
+}
+
+@media (max-width: 850px) {
+  .dallfi-admin-header {
+    gap: 12px;
+    display: block;
+    min-height: 60px;
+    padding: 7px 16px;
+  }
+
+  .admin-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dallfi-admin-header nav {
+    position: absolute;
+    top: 61px;
+    right: 12px;
+    left: 12px;
+    display: none;
+    overflow: visible;
+    border: 1px solid #bbcad9;
+    border-radius: 7px;
+    padding: 6px;
+    background: #f1f4f7;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .dallfi-admin-header nav.is-open {
+    display: grid;
+  }
+
+  .dallfi-admin-header nav::before {
+    position: absolute;
+    top: -8px;
+    right: 18px;
+    width: 14px;
+    height: 14px;
+    border-top: 1px solid #bbcad9;
+    border-left: 1px solid #bbcad9;
+    background: #f1f4f7;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .dallfi-admin-header nav a {
+    position: relative;
+    z-index: 1;
+    border-radius: 4px;
+    padding: 12px;
+    color: #28425f;
+  }
+
+  .dallfi-admin-header nav a.active,
+  .dallfi-admin-header nav a:hover {
+    background: #dce7f1;
+    color: #fc0000;
+  }
+
+  .admin-header-tools > a {
+    display: none;
+  }
+
+  .admin-menu-toggle {
+    display: grid;
+  }
+
+  .admin-mobile-signout {
+    position: relative;
+    z-index: 1;
+    display: block;
+    border: 0;
+    border-top: 1px solid #ccd8e3;
+    padding: 11px 12px 7px;
+    background: transparent;
+    color: #b42318;
+    font: 800 12px system-ui, sans-serif;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .admin-desktop-signout {
+    display: none;
+  }
+
+  .dallfi-admin-logo {
+    width: 102px;
+  }
+
+  .dallfi-admin-logo img {
+    width: 102px;
+  }
+
+  .dallfi-admin-main {
+    width: min(100% - 28px, 1180px);
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 901px) {
+  .dallfi-admin {
+    padding-left: 247px;
+  }
+
+  .dallfi-admin-header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 247px;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    background: #fc0000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .admin-header-row {
+    display: flex;
+    min-height: 86px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 20px;
+  }
+
+  .dallfi-admin-logo {
+    width: 132px;
+    height: 54px;
+  }
+
+  .dallfi-admin-logo img {
+    width: 132px;
+  }
+
+  .admin-header-tools {
+    display: block;
+  }
+
+  .admin-header-tools > a {
+    display: none;
+  }
+
+  .dallfi-admin-header nav {
+    display: grid;
+    align-content: start;
+    flex: 1;
+    gap: 3px;
+    overflow: visible;
+    padding: 19px 12px;
+  }
+
+  .dallfi-admin-header nav::before {
+    color: rgba(255, 255, 255, 0.8);
+    content: "WORKSPACE";
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.45px;
+    padding: 0 10px 8px;
+  }
+
+  .dallfi-admin-header nav a {
+    border-left: 3px solid transparent;
+    border-radius: 4px;
+    padding: 11px 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+  }
+
+  .dallfi-admin-header nav a:hover,
+  .dallfi-admin-header nav a.active {
+    border-left-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  .admin-desktop-signout {
+    margin: 15px 22px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 0 0;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+  }
+
+  .dallfi-admin-main {
+    width: min(100% - 52px, 1220px);
+    margin: 0 auto;
+    padding: 52px 0 80px;
+  }
+
+  .dallfi-admin-main::before {
+    display: block;
+    margin-bottom: 25px;
+    color: #7b8fa8;
+    content: "ADMINISTRATION / OVERVIEW";
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.35px;
+  }
+}
+
+/* Admin dashboard cards */
+.admin-home {
+  animation: dashboard-in 0.3s ease both;
+}
+
+@keyframes dashboard-in {
+  from {
+    opacity: 0.01;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.admin-home-intro {
+  display: flex;
+  min-height: 158px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid #d7e1ec;
+  padding-bottom: 25px;
+}
+
+.admin-home-intro h1 {
+  margin: 4px 0 10px;
+  color: #172b47;
+  font-size: clamp(33px, 5vw, 47px);
+  letter-spacing: -0.055em;
+}
+
+.admin-home-intro > div {
+  max-width: 630px;
+}
+
+.admin-home-intro p {
+  max-width: 610px;
+  margin: 0;
+  color: #5b6e85;
+  line-height: 1.6;
+}
+
+.section-label {
+  color: #fc0000;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.admin-home-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-home-card {
+  display: flex;
+  min-height: 246px;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #dce1e6;
+  border-radius: 2px;
+  padding: 27px 24px 24px;
+  background: #fff;
+  color: #101316;
+  transition: border-color 0.18s ease, background 0.18s ease;
+  text-decoration: none;
+}
+
+.admin-home-card:hover {
+  border-color: #8d98a4;
+  background: #fafbfc;
+}
+
+.admin-home-icon {
+  display: grid;
+  width: auto;
+  height: auto;
+  margin: 0;
+  place-items: start;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #090b0d;
+}
+
+.admin-home-icon svg {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.45;
+}
+
+.admin-home-card h2 {
+  margin: 25px 0 8px;
+  color: #101316;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.admin-home-card p {
+  margin: 0;
+  color: #65707c;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.admin-robot {
+  width: min(220px, 26vw);
+  flex: 0 0 auto;
+  color: #101a25;
+}
+
+@media (max-width: 1050px) and (min-width: 701px) {
+  .admin-home-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-home-card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-home-intro {
+    min-height: 0;
+    align-items: flex-start;
+  }
+
+  .admin-home-intro h1 {
+    font-size: 30px;
+  }
+
+  .admin-home-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .admin-home-card {
+    min-height: 180px;
+    padding: 22px;
+  }
+
+  .admin-home-icon svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .admin-home-card h2 {
+    margin-top: 19px;
+  }
+
+  .admin-robot {
+    width: 112px;
+    margin-top: 4px;
+  }
+}
+
+/* Admin page styles */
+.admin-page {
+  animation: dashboard-in 0.3s ease both;
+}
+
+.admin-page-title {
+  margin-bottom: 34px;
+  border-bottom: 1px solid #d7e1ec;
+  padding-bottom: 25px;
+}
+
+.admin-page-title h1 {
+  margin: 4px 0 10px;
+  color: #172b47;
+  font-size: clamp(33px, 5vw, 47px);
+  letter-spacing: -0.055em;
+}
+
+.admin-page-title p {
+  max-width: 610px;
+  margin: 0;
+  color: #5b6e85;
+  line-height: 1.6;
+}
+
+.admin-content {
+  background: #fff;
+  border-radius: 7px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(10, 49, 84, 0.1);
+}
+
+/* Login page styles */
+.login-page input,
+.login-page button,
+.login-page .bg-gray-100,
+.login-page .bg-white {
+  border-radius: 0 !important;
+}
+
+.login-page input {
+  border: 1px solid #d1d5db !important;
+  background-color: #ffffff !important;
+  font-weight: 500 !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.login-page input:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.1) !important;
+  outline: none !important;
+}
+
+.login-page button {
+  font-weight: 600 !important;
+  letter-spacing: 0.025em !important;
+  transition: all 0.2s ease !important;
+}
+
+.login-page button[type="submit"] {
+  background-color: #dc2626 !important;
+  border: none !important;
+}
+
+.login-page button[type="submit"]:hover {
+  background-color: #b91c1c !important;
+}
+
+.login-page button[type="button"] {
+  border: 1px solid #d1d5db !important;
+  background-color: #ffffff !important;
+}
+
+.login-page button[type="button"]:hover {
+  background-color: #f9fafb !important;
+  border-color: #9ca3af !important;
+}
+
+.login-page button[type="button"].bg-white {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.login-page label {
+  font-weight: 600 !important;
+  color: #374151 !important;
+  font-size: 0.875rem !important;
+}
