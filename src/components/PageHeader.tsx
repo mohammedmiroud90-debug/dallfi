@@ -66,7 +66,7 @@ export default function PageHeader({ title }: Props) {
 
           <Link href="/" className="min-w-0 flex-1" aria-label="Dallfi">
             <Image
-              src="/Dallfi.png"
+              src="/DALLFIEXT.png"
               alt="Dallfi"
               width={140}
               height={40}

@@ -60,11 +60,11 @@ function IconLinkedIn({ className }: { className?: string }) {
   );
 }
 
-/** Dallfi.png with white filter for red header */
+/** DALLFIEXT.png with white filter for red header */
 function BrandLogo({ compact = false }: { compact?: boolean }) {
   return (
     <Image
-      src="/Dallfi.png"
+      src="/DALLFIEXT.png"
       alt="Dallfi"
       width={compact ? 180 : 220}
       height={compact ? 52 : 64}

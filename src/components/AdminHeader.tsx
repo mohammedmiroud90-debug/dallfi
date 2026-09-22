@@ -72,7 +72,7 @@ function AdminLocaleSwitcher({ value, onLocaleChange }: { value: Locale; onLocal
 function BrandLogo() {
   return (
     <Image
-      src="/Dallfi.png"
+      src="/DALLFIEXT.png"
       alt="Dallfi"
       width={200}
       height={72}

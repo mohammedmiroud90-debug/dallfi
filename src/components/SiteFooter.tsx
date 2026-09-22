@@ -118,7 +118,7 @@ export default function SiteFooter() {
           <div className="min-w-0 flex-1">
             <Link href="/" className="inline-flex items-center" aria-label="Dallfi">
               <Image
-                src="/Dallfi.png"
+                src="/DALLFIEXT.png"
                 alt="Dallfi"
                 width={180}
                 height={48}

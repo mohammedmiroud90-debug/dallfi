@@ -38,7 +38,7 @@ export default function CookieConsent() {
         className="relative w-full max-w-xl bg-brand p-6 text-white shadow-[0_20px_60px_rgba(0,0,0,0.5)] sm:p-8"
       >
         <Image
-          src="/Dallfi.png"
+          src="/DALLFIEXT.png"
           alt="DALLFI"
           width={220}
           height={64}
