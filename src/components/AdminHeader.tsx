@@ -72,12 +72,12 @@ function AdminLocaleSwitcher({ value, onLocaleChange }: { value: Locale; onLocal
 function BrandLogo() {
   return (
     <Image
-      src="/DALLFIEXT.png"
+      src="/Bifti.png"
       alt="Dallfi"
       width={200}
       height={72}
       priority
-      className="w-auto h-14 max-w-[200px] object-contain object-left brightness-0 invert"
+      className="w-auto h-14 max-w-[200px] object-contain object-left"
     />
   );
 }

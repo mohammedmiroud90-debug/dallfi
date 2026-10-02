@@ -66,12 +66,12 @@ export default function PageHeader({ title }: Props) {
 
           <Link href="/" className="min-w-0 flex-1" aria-label="Dallfi">
             <Image
-              src="/DALLFIEXT.png"
+              src="/Bifti.png"
               alt="Dallfi"
               width={140}
               height={40}
               priority
-              className="h-8 w-auto max-w-[140px] object-contain object-left brightness-0 invert"
+              className="h-8 w-auto max-w-[140px] object-contain object-left"
             />
           </Link>
 

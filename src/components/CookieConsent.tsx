@@ -38,12 +38,12 @@ export default function CookieConsent() {
         className="relative w-full max-w-xl bg-brand p-6 text-white shadow-[0_20px_60px_rgba(0,0,0,0.5)] sm:p-8"
       >
         <Image
-          src="/DALLFIEXT.png"
+          src="/Bifti.png"
           alt="DALLFI"
           width={220}
           height={64}
           priority
-          className="absolute top-5 right-5 h-12 w-auto max-w-[140px] object-contain object-right brightness-0 invert sm:top-6 sm:right-6 sm:h-16 sm:max-w-[180px]"
+          className="absolute top-5 right-5 h-12 w-auto max-w-[140px] object-contain object-right sm:top-6 sm:right-6 sm:h-16 sm:max-w-[180px]"
         />
 
         <h2

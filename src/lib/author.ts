@@ -20,7 +20,7 @@ const headers = {
 export const defaultAuthorProfile: AuthorProfile = {
   name: "Dallfi Team",
   bio: "Builds, releases, and product notes from Dallfi Softwares.",
-  avatarUrl: "/DALLFIEXT.png",
+  avatarUrl: "/Bifti.png",
 };
 
 export async function getAuthorProfile(): Promise<AuthorProfile> {

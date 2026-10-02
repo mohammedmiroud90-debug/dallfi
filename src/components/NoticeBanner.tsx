@@ -21,7 +21,7 @@ export default async function NoticeBanner() {
         <div className="notice-banner__copy">
           <p className="notice-banner__text">
             {t("message")}{" "}
-            <Link href="/blog?category=builds" className="notice-banner__link">
+            <Link href="/ddm" className="notice-banner__link">
               {t("learnMore")}
             </Link>
           </p>

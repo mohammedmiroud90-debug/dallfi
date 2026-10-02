@@ -60,16 +60,16 @@ function IconLinkedIn({ className }: { className?: string }) {
   );
 }
 
-/** DALLFIEXT.png with white filter for red header */
+/** Bifti wordmark supplied for the Dallfi brand. */
 function BrandLogo({ compact = false }: { compact?: boolean }) {
   return (
     <Image
-      src="/DALLFIEXT.png"
+      src="/Bifti.png"
       alt="Dallfi"
       width={compact ? 180 : 220}
       height={compact ? 52 : 64}
       priority
-      className={`w-auto object-contain object-left brightness-0 invert ${
+      className={`w-auto object-contain object-left ${
         compact ? "h-10 max-w-[180px]" : "h-12 max-w-[220px] lg:h-14"
       }`}
     />
@@ -89,6 +89,7 @@ export default function SiteHeader({ notice }: Props) {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const navLinks = [
+    { href: "/ddm", label: "DDM" },
     { href: "/blog?category=builds", label: t("builds") },
     { href: "/releases", label: t("releases") },
   ] as const;

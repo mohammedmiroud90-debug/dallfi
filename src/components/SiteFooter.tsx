@@ -98,6 +98,7 @@ export default function SiteFooter() {
 
   const rowOne = [
     { href: "/", label: t("home") },
+    { href: "/ddm", label: "DDM" },
     { href: "/blog?category=builds", label: t("builds") },
     { href: "/releases", label: t("releases") },
     { href: "/about", label: t("howItWorks") },
@@ -118,11 +119,11 @@ export default function SiteFooter() {
           <div className="min-w-0 flex-1">
             <Link href="/" className="inline-flex items-center" aria-label="Dallfi">
               <Image
-                src="/DALLFIEXT.png"
+                src="/Bifti.png"
                 alt="Dallfi"
                 width={180}
                 height={48}
-                className="h-10 w-auto object-contain object-left brightness-0 invert sm:h-11"
+                className="h-10 w-auto object-contain object-left sm:h-11"
               />
             </Link>
 
